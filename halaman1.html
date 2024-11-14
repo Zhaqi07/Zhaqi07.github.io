@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Happy B'Day Alya!</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Indie+Flower&display=swap" rel="stylesheet">
+        <style>
+            /* CSS untuk efek visual */
+            body.play-music {
+                background-color: pink; /* ganti background saat audio diputar */
+            }
+            body.audio-paused {
+                background-color: lightblue; /* background saat audio dijeda */
+            }
+
+            img.playing {
+                width: 300px; /* Ukuran gambar */
+                height: auto; /* Menjaga rasio gambar */
+                display: block;
+                margin: 20px auto; /* Menempatkan gambar ditengah */
+                transition: all 0.3s ease-in-out; /* efek transisi halus */
+            }
+
+            img.playing {
+                opacity: 0.7; /* efek transparasi saat audio diputar */
+                transform: scale(1.1); /* memperbesar gambar sedikit */
+            }
+
+            audio {
+                display: block;
+                margin: 20px auto; /* menempatkan audio player ditengah */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <!-- Gambar di bagian atas-->
+             <img id="audioImage" src="ulangtahun.jpg" alt="Birthday Image" />
+            <div class="text">
+                <h1>Happy Birthday Cantikku!</h1>
+                <p>Cheers to your special birthday! Your remarkable life is worthy of today's celebration. I am thankful to have you by my side on this life journey.</p>
+                <br><br>
+                Luckily, I stepped under the same stars as you and walked on the same land between the seas, galaxies, and moons.
+                <br><br>
+                I'm happy to have found someone like you, honestly I still don't believe that we can have a relationship that is more than just friends. What's even harder to believe is that you look so much like the woman I've always wanted. I want to be with you all my life, so I hope we can be together forever.
+                <br><br>
+                Every step we take together is a part of the journey that shapes our unique story. Your smile illuminates each day, adding warmth to the surroundings.
+                <br><br>
+                May this year be a chapter filled with happiness, success, and love. Thank you for being a part of my life's story. Happy birthday, and may each your days be filled with extraordinary joy and achivements!</p>
+                <p class="muted">- Zhaqi -</p>
+            </div>
+            <div class="space"></div>
+            <audio controls autoplay>
+            <source src="Paul Partohap - THANK YOU 4 LOVIN' ME (Lyric Video).mp3" type="audio/mp3">
+        </audio>
+
+ <script src="script.js"></script>
+ <script>
+     const audio = document.querySelector('audio');
+     const body = document.querySelector('body');
+     const image = document.getElementById('audioImage');
+
+     // Event listener saat audio mulai diputar
+     audio.addEventListener('play', () => {
+         body.classList.add('play-music');  // Menambahkan kelas untuk ubah background
+         image.src = "birthday.jpg"     
+         // Ganti gambar saat audio diputar
+         image.classList.add('playing');  // Tambahkan efek pada gambar
+     });
+
+     // Event listener saat audio dijeda
+     audio.addEventListener('pause', () => {
+         body.classList.remove('play-music');  // Hapus kelas untuk kembali ke background asli
+         image.src = "ulangtahun.jpg";  // Kembalikan gambar saat audio dijeda
+         image.classList.remove('playing');  // Hapus efek pada gambar
+     });
+            </script>
+        </div>
+
+    </body>
+</html>

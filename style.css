@@ -1,0 +1,36 @@
+/* Mengatur latar belakang halaman ketika audio diputar */
+body.play-music {
+    background-color: lightblue; /* Warna latar belakang ketika audio diputar */
+}
+body.audio-paused {
+    background-color: pink; /* warna latar belakang ketika audio dijeda */
+}
+body {
+    font-family: "DynaPuff", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+/* Gaya untuk elemen gambar */
+img {
+    width: 300px; /* Mengatur lebar gambar */
+    height: auto; /* Menjaga rasio aspek gambar */
+    display: block; /* Menampilkan gambar sebagai blok */
+    margin: 20px auto; /* Memberi margin agar gambar terpusat di tengah */
+    transition: all 0.3s ease-in-out; /* Efek transisi yang halus saat gambar berubah */
+}
+
+/* Efek saat gambar sedang diganti */
+img.playing {
+    opacity: 0.7; /* Menambahkan efek transparansi pada gambar saat audio diputar */
+    transform: scale(1.1); /* Memperbesar gambar sedikit ketika audio diputar */
+}
+
+/* Efek pada tombol audio */
+audio {
+    display: block;
+    margin: 20px auto; /* Menampilkan audio player di tengah halaman */
+}
